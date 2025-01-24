@@ -1,0 +1,10 @@
+streamlit
+streamlit_folium
+geopandas
+pandas
+leafmap
+folium
+altair
+# pathlib
+# shapely
+xlrd
