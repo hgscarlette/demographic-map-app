@@ -148,8 +148,9 @@ with st.sidebar:
     
     # About section
     markdown = """
-    This interactive map dictates demographic across every ward of Vietnam, as of 2019 data surveyed by the General Statistics Office of Vietnam, to support Location Analyses in Retail and F&B.
+    This interactive map dictates demographic across every ward of Vietnam to support Location Analyses in Retail and F&B.
 
+    Data surveyed by the General Statistics Office of Vietnam as of 2019.
     Check out [GitHub repository](https://github.com/hgscarlette/demographic-map-app).
     """
     
