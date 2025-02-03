@@ -15,7 +15,7 @@ A webapp built in Python using Streamlit and deployed to [Streamlit Cloud](https
 2. Run the app
 
    ```
-   $ streamlit run Home.py
+   $ streamlit run main.py
    ```
 
 ## Data sources
