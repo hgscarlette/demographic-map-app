@@ -289,7 +289,7 @@ with data:
         youngpop_sum = int(df_pop_dist[df_pop_dist.dist_id.isin(df_chart.dist_id)]["total_15_34"].sum())
         youngpop_pcnt = round(youngpop_sum / sum_total, 2)
 
-        st.metric(label="Young Population", value="{:,}".format(youngpop_sum), border=True, delta="in "+df_chart.district, delta_color="normal")
+        st.metric(label="Young Population", value="{:,}".format(youngpop_sum), border=True, delta="in "+gdf_map.district.unique(), delta_color="normal")
 
 
     if st.session_state["filters"]["city"] or st.session_state["filters"]["district"] or st.session_state["filters"]["ward"]:
