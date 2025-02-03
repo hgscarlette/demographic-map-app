@@ -278,7 +278,7 @@ with data:
         # Card 2: Urban Population
         urban_sum = int(df_chart["urban"].sum())
         urban_pcnt = round(urban_sum / sum_total, 2)
-        st.metric(label="Urban Population", value="{:,}".format(urban_sum), border=True, delta="{:.0%}".format(urban_pcnt)+" of total", delta_color="normal") #"inverse"
+        st.metric(label="Urban Population", value="{:,}".format(urban_sum), border=True, delta="{:.0%}".format(urban_pcnt), delta_color="normal") #"inverse"
 
     with cols[1]:
         # Card 3: Average population density
@@ -289,7 +289,7 @@ with data:
         youngpop_sum = int(df_pop_dist[df_pop_dist.dist_id.isin(df_chart.dist_id)]["total_15_34"].sum())
         youngpop_pcnt = round(youngpop_sum / sum_total, 2)
 
-        st.metric(label="Young Population", value="{:,}".format(youngpop_sum), border=True, delta="{:.0%}".format(youngpop_pcnt)+" of total", delta_color="normal")
+        st.metric(label="Young Population", value="{:,}".format(youngpop_sum), border=True, delta="in "+df_chart.district, delta_color="normal")
 
 
     if st.session_state["filters"]["city"] or st.session_state["filters"]["district"] or st.session_state["filters"]["ward"]:
