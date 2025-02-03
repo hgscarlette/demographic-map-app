@@ -272,22 +272,21 @@ with data:
     cols = st.columns(2)
     with cols[0]:
         # Card 1: Total Population
-        sum_total = gdf_map["total"].sum()
+        sum_total = df_chart["total"].sum()
         st.metric(label="Total Population", value="{:,}".format(sum_total), border=True)
         
         # Card 2: Urban Population
-        urban_sum = int(gdf_map["urban"].sum())
+        urban_sum = int(df_chart["urban"].sum())
         urban_pcnt = round(urban_sum / sum_total, 2)
         st.metric(label="Urban Population", value="{:,}".format(urban_sum), border=True, delta="{:.0%}".format(urban_pcnt)+" of total", delta_color="normal") #"inverse"
 
     with cols[1]:
         # Card 3: Average population density
-        density_avg = int(gdf_map["pop_density"].median())
+        density_avg = int(df_chart["pop_density"].median())
         st.metric(label="Median Density", value="{:,}/Km2".format(density_avg), border=True)
 
         # Card 4: Young Population
-        dist_ids = df_chart[df_chart[admin_id_type].isin(admin_ids)].dist_id
-        youngpop_sum = int(df_pop_dist[df_pop_dist.dist_id.isin(dist_ids)]["total_15_34"].sum())
+        youngpop_sum = int(df_pop_dist[df_pop_dist.dist_id.isin(df_chart.dist_id)]["total_15_34"].sum())
         youngpop_pcnt = round(youngpop_sum / sum_total, 2)
 
         st.metric(label="Young Population", value="{:,}".format(youngpop_sum), border=True, delta="{:.0%}".format(youngpop_pcnt)+" of total", delta_color="normal")
