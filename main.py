@@ -4,10 +4,8 @@ import geopandas as gpd
 import pandas as pd
 import folium
 from streamlit_folium import st_folium
-# import altair as alt
 from src.dynamic_filters import DynamicFilters
 
-# import numpy as np
 
 #######################
 # Page configuration
@@ -16,8 +14,6 @@ st.set_page_config(
     page_icon="🌏",
     layout="wide",
     initial_sidebar_state="expanded")
-
-# alt.themes.enable("dark")
 
 
 #######################
@@ -201,7 +197,7 @@ map, data = st.columns([4, 3], gap="small")
 with map:
     map = leafmap.Map(
         locate_control=True, draw_control=False, attribution_control=True, #latlon_control=True, #draw_export=True, #minimap_control=True,
-        center=map_center, zoom=map_zoom, height="700px"
+        center=map_center, zoom=map_zoom, height="800px"
     )
 
     # Layer 1: Basemap
