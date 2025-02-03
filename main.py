@@ -4,10 +4,10 @@ import geopandas as gpd
 import pandas as pd
 import folium
 from streamlit_folium import st_folium
-import altair as alt
+# import altair as alt
 from src.dynamic_filters import DynamicFilters
 
-import numpy as np
+# import numpy as np
 
 #######################
 # Page configuration
@@ -17,7 +17,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded")
 
-alt.themes.enable("dark")
+# alt.themes.enable("dark")
 
 
 #######################
